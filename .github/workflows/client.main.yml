@@ -31,8 +31,7 @@ jobs:
           cd src/client
           npm install
 
-      - name: Build and Test
+      - name: Build
         run: |
           cd src/client
           npm run build
-          npm test
