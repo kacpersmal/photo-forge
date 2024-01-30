@@ -4,6 +4,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoForge.Api", "PhotoForg
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5111884E-DAFA-4261-A85B-1A825DB9AA88}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoForge.Core", "PhotoForge.Core\PhotoForge.Core.csproj", "{7154021A-DCD0-4431-8658-6E4B2B4BAEB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoForge.Application", "PhotoForge.Application\PhotoForge.Application.csproj", "{E35FBEFE-5021-476E-B06F-9238D22A850F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoForge.Infrastructure", "PhotoForge.Infrastructure\PhotoForge.Infrastructure.csproj", "{88A06927-9535-4DD2-A691-80B2783C1A3A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,5 +20,17 @@ Global
 		{095E6E8D-2B97-4D32-B907-2E464B63DB17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{095E6E8D-2B97-4D32-B907-2E464B63DB17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{095E6E8D-2B97-4D32-B907-2E464B63DB17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7154021A-DCD0-4431-8658-6E4B2B4BAEB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7154021A-DCD0-4431-8658-6E4B2B4BAEB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7154021A-DCD0-4431-8658-6E4B2B4BAEB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7154021A-DCD0-4431-8658-6E4B2B4BAEB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E35FBEFE-5021-476E-B06F-9238D22A850F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E35FBEFE-5021-476E-B06F-9238D22A850F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E35FBEFE-5021-476E-B06F-9238D22A850F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E35FBEFE-5021-476E-B06F-9238D22A850F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88A06927-9535-4DD2-A691-80B2783C1A3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88A06927-9535-4DD2-A691-80B2783C1A3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88A06927-9535-4DD2-A691-80B2783C1A3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88A06927-9535-4DD2-A691-80B2783C1A3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
