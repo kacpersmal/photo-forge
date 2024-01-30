@@ -1,9 +1,7 @@
-﻿using PhotoForge.Core.ValueObjects;
-
-namespace PhotoForge.Core.Services.Hashing;
+﻿namespace PhotoForge.Core.Services.Hashing;
 
 public interface IHashedValueService
 {
-    HashedValue GenerateHashedValue(string plainTextPassword);
-    bool ValidateHashedValue(string plainTextPassword, HashedValue hashedValue);
+    ValueObjects.HashedValue GenerateHashedValue(string plainTextValue);
+    bool ValidateHashedValue(string plainTextValue, ValueObjects.HashedValue hashedValue);
 }

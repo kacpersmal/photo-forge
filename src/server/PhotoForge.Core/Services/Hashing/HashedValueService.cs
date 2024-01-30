@@ -9,17 +9,17 @@ internal sealed class HashedValueService : IHashedValueService
 {
     private const int SaltSize = 16;
 
-    public HashedValue GenerateHashedValue(string plainTextPassword)
+    public HashedValue GenerateHashedValue(string plainTextValue)
     {
         byte[] salt = GenerateSalt();
-        byte[] hash = GenerateHash(plainTextPassword, salt);
+        byte[] hash = GenerateHash(plainTextValue, salt);
 
         return new HashedValue(hash, salt);
     }
 
-    public bool ValidateHashedValue(string plainTextPassword, HashedValue hashedValue)
+    public bool ValidateHashedValue(string plainTextValue, HashedValue hashedValue)
     {
-        byte[] inputHash = GenerateHash(plainTextPassword, hashedValue.Salt);
+        byte[] inputHash = GenerateHash(plainTextValue, hashedValue.Salt);
 
         return inputHash.SequenceEqual(hashedValue.Hash);
     }
