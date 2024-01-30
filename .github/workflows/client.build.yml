@@ -1,11 +1,13 @@
-name: ClientApp - Develop
+name: ClientApp - Build
 
 on:
   push:
     branches:
+      - main
       - develop
   pull_request:
     branches:
+      - main
       - develop
     paths:
         - 'src/client/**/*'

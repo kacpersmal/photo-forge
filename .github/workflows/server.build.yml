@@ -1,11 +1,13 @@
-name: Server - Develop
+name: Server - Build
 
 on:
   push:
     branches:
+      - main
       - develop
   pull_request:
     branches:
+      - main
       - develop
     paths:
       - 'src/server/**/*'
@@ -30,9 +32,9 @@ jobs:
           dotnet-version: '8.0.x'
       
       - name: Build solution
-        run: dotnet build -c Debug
+        run: dotnet build
         working-directory: ./src/server
 
       - name: Run tests
-        run: dotnet test -c Debug --no-build --no-restore
+        run: dotnet test --no-build --no-restore
         working-directory: ./src/server
