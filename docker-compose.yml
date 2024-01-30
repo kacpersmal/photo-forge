@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    ports:
+      - "5432:5432" # dotnet connection string: Server=db;Port=5432;Database=photo-forge-db;User Id=root;Password=root;
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=photo-forge-db
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
