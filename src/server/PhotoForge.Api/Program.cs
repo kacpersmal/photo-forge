@@ -1,4 +1,5 @@
 using PhotoForge.Api.Extensions;
+using PhotoForge.Core.Services;
 
 using Serilog;
 
@@ -10,6 +11,8 @@ builder.Host.UseSerilog((context, configuration) =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.ConfigureCors();
+
+builder.Services.AddCoreServices();
 
 var app = builder.Build();
 

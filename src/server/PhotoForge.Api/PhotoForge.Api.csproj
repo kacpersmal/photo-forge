@@ -24,4 +24,8 @@
       <Folder Include="Features\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\PhotoForge.Core\PhotoForge.Core.csproj" />
+    </ItemGroup>
+
 </Project>
