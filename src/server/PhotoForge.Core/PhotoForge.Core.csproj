@@ -8,7 +8,6 @@
 
     <ItemGroup>
       <Folder Include="Features\Auth\" />
-      <Folder Include="Features\Users\" />
     </ItemGroup>
 
     <ItemGroup>

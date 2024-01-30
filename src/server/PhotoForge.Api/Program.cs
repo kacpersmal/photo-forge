@@ -1,5 +1,6 @@
 using PhotoForge.Api.Extensions;
 using PhotoForge.Core.Services;
+using PhotoForge.Infrastructure.Database;
 
 using Serilog;
 
@@ -13,6 +14,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.ConfigureCors();
 
 builder.Services.AddCoreServices();
+builder.Services.AddAppDbContext(builder.Configuration);
 
 var app = builder.Build();
 
