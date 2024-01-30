@@ -31,6 +31,8 @@ jobs:
       
       - name: Build solution
         run: dotnet build -c Debug
+        working-directory: ./src/server
 
       - name: Run tests
         run: dotnet test -c Debug --no-build --no-restore
+        working-directory: ./src/server
