@@ -10,30 +10,27 @@ on:
     paths:
       - 'src/server/**/*'
 
+concurrency: 
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+
 jobs:
   build:
-    runs-on: ubuntu-latest
+    name: Build
+    runs-on: ubuntu-latest    
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - name: Cache .NET SDK
-        uses: actions/cache@v2
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
         with:
-          path: ~/.dotnet
-          key: ${{ runner.os }}-dotnet-${{ hashFiles('**/*.csproj') }}
-          restore-keys: |
-            ${{ runner.os }}-dotnet-
+          dotnet-version: '8.0.x'
+      
+      - name: Build solution
+        run: dotnet build -c Debug
 
-      - name: Install .NET SDK
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 8.0
-
-      - name: Build and Test
-        run: |
-          cd src/server
-          dotnet restore
-          dotnet build
-          dotnet test
+      - name: Run tests
+        run: dotnet test -c Debug --no-build --no-restore
