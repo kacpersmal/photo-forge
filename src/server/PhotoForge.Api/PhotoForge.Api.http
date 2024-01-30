@@ -1,0 +1,6 @@
+@PhotoForge.Api_HostAddress = http://localhost:5075
+
+GET {{PhotoForge.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
