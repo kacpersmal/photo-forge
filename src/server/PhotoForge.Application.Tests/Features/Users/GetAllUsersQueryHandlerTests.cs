@@ -22,9 +22,9 @@ public class GetAllUsersQueryHandlerTests
             // Seed the in-memory database with some test data
             var users = new List<User>
             {
-                new User(new FullName("John", "Doe"), new EmailAddress("john.doe@example.com"), new HashedValue(new byte[1], new byte[1])),
-                new User(new FullName("Jane", "Doe"), new EmailAddress("jane.doe@example.com"), new HashedValue(new byte[1], new byte[1])),
-                new User(new FullName("Bob", "Smith"), new EmailAddress("bob.smith@example.com"), new HashedValue(new byte[1], new byte[1]))
+                new(new FullName("John", "Doe"), new EmailAddress("john.doe@example.com"), new HashedValue(new byte[1], new byte[1])),
+                new(new FullName("Jane", "Doe"), new EmailAddress("jane.doe@example.com"), new HashedValue(new byte[1], new byte[1])),
+                new(new FullName("Bob", "Smith"), new EmailAddress("bob.smith@example.com"), new HashedValue(new byte[1], new byte[1]))
             };
             context.Users.AddRange(users);
             await context.SaveChangesAsync();
@@ -60,9 +60,9 @@ public class GetAllUsersQueryHandlerTests
             // Seed the in-memory database with some test data
             var users = new List<User>
             {
-                new User(new FullName("John", "Doe"), new EmailAddress("john.doe@example.com"), new HashedValue(new byte[1], new byte[1])),
-                new User(new FullName("Jane", "Doe"), new EmailAddress("jane.doe@example.com"), new HashedValue(new byte[1], new byte[1])),
-                new User(new FullName("Bob", "Smith"), new EmailAddress("bob.smith@example.com"), new HashedValue(new byte[1], new byte[1]))
+                new(new FullName("John", "Doe"), new EmailAddress("john.doe@example.com"), new HashedValue(new byte[1], new byte[1])),
+                new(new FullName("Jane", "Doe"), new EmailAddress("jane.doe@example.com"), new HashedValue(new byte[1], new byte[1])),
+                new(new FullName("Bob", "Smith"), new EmailAddress("bob.smith@example.com"), new HashedValue(new byte[1], new byte[1]))
             };
             context.Users.AddRange(users);
             await context.SaveChangesAsync();
