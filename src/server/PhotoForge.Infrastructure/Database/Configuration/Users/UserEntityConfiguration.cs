@@ -15,9 +15,7 @@ internal class UserEntityConfiguration : IEntityTypeConfiguration<User>
 
         builder.OwnsOne(u => u.FullName);
 
-        builder.HasIndex(u => u.Email);
-        builder.Property(u => u.Email)
-            .HasConversion(add => add.Address, value => new EmailAddress(value));
+        builder.OwnsOne(u => u.Email);
         
         //builder.OwnsOne(u => u.Email);
         builder.OwnsOne(u => u.Password);

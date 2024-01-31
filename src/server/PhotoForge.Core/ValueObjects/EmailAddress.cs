@@ -9,7 +9,7 @@ public class EmailAddress : ValueObject
     public EmailAddress() { }
     public EmailAddress(string address)
     {
-        if (RegexUtilities.IsValidEmail(address))
+        if (!RegexUtilities.IsValidEmail(address))
             throw new ArgumentException("Email is in invalid format", nameof(address));
 
         Address = address;

@@ -7,7 +7,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Features\" />
+      <PackageReference Include="AutoMapper" />
+      <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" />
+      <PackageReference Include="MediatR" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\PhotoForge.Infrastructure\PhotoForge.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

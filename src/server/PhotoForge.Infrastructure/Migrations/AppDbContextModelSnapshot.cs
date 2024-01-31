@@ -28,19 +28,30 @@ namespace PhotoForge.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("Email");
 
                     b.ToTable("User", "User");
                 });
 
             modelBuilder.Entity("PhotoForge.Core.Features.Users.User", b =>
                 {
+                    b.OwnsOne("PhotoForge.Core.ValueObjects.EmailAddress", "Email", b1 =>
+                        {
+                            b1.Property<Guid>("UserId")
+                                .HasColumnType("uuid");
+
+                            b1.Property<string>("Address")
+                                .IsRequired()
+                                .HasColumnType("text");
+
+                            b1.HasKey("UserId");
+
+                            b1.ToTable("User", "User");
+
+                            b1.WithOwner()
+                                .HasForeignKey("UserId");
+                        });
+
                     b.OwnsOne("PhotoForge.Core.ValueObjects.FullName", "FullName", b1 =>
                         {
                             b1.Property<Guid>("UserId")
@@ -82,6 +93,9 @@ namespace PhotoForge.Infrastructure.Migrations
                             b1.WithOwner()
                                 .HasForeignKey("UserId");
                         });
+
+                    b.Navigation("Email")
+                        .IsRequired();
 
                     b.Navigation("FullName")
                         .IsRequired();

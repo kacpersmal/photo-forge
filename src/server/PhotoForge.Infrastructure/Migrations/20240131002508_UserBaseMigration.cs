@@ -20,7 +20,7 @@ namespace PhotoForge.Infrastructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    Email = table.Column<string>(type: "text", nullable: false),
+                    Email_Address = table.Column<string>(type: "text", nullable: false),
                     FullName_FirstName = table.Column<string>(type: "text", nullable: false),
                     FullName_LastName = table.Column<string>(type: "text", nullable: false),
                     Password_Hash = table.Column<byte[]>(type: "bytea", nullable: false),
@@ -30,12 +30,6 @@ namespace PhotoForge.Infrastructure.Migrations
                 {
                     table.PrimaryKey("PK_User", x => x.Id);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_User_Email",
-                schema: "User",
-                table: "User",
-                column: "Email");
         }
 
         /// <inheritdoc />

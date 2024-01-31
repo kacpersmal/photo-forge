@@ -1,14 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
+using PhotoForge.Core.Features.Users;
+
 namespace PhotoForge.Infrastructure.Database;
 
-public sealed class AppDbContext : DbContext
+public sealed class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
 {
-    public AppDbContext(DbContextOptions<AppDbContext> options)
-        : base(options)
-    {
-    }
-    
+    public required DbSet<User> Users { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
