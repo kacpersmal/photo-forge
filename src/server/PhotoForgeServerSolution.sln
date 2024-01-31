@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoForge.Infrastructure",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoForge.Core.Tests", "PhotoForge.Core.Tests\PhotoForge.Core.Tests.csproj", "{72575762-4563-4C27-810C-3238849EE415}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoForge.Application.Tests", "PhotoForge.Application.Tests\PhotoForge.Application.Tests.csproj", "{7B9EC7C4-F4EA-4D96-B59D-0EA5B8DB7990}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,8 +40,13 @@ Global
 		{72575762-4563-4C27-810C-3238849EE415}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72575762-4563-4C27-810C-3238849EE415}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72575762-4563-4C27-810C-3238849EE415}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B9EC7C4-F4EA-4D96-B59D-0EA5B8DB7990}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B9EC7C4-F4EA-4D96-B59D-0EA5B8DB7990}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B9EC7C4-F4EA-4D96-B59D-0EA5B8DB7990}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B9EC7C4-F4EA-4D96-B59D-0EA5B8DB7990}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{72575762-4563-4C27-810C-3238849EE415} = {5111884E-DAFA-4261-A85B-1A825DB9AA88}
+		{7B9EC7C4-F4EA-4D96-B59D-0EA5B8DB7990} = {5111884E-DAFA-4261-A85B-1A825DB9AA88}
 	EndGlobalSection
 EndGlobal

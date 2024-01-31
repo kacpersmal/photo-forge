@@ -6,7 +6,7 @@ namespace PhotoForge.Infrastructure.Database;
 
 public sealed class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
 {
-    public required DbSet<User> Users { get; set; }
+    public DbSet<User> Users { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

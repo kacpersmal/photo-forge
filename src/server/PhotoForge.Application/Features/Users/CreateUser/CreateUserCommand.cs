@@ -1,6 +1,4 @@
-﻿using MediatR;
-
-namespace PhotoForge.Application.Features.Users.CreateUser;
+﻿namespace PhotoForge.Application.Features.Users.CreateUser;
 
 public class CreateUserCommand : IRequest
 {
