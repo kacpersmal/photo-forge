@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
 
+using PhotoForge.Api.Authorization;
 using PhotoForge.Api.Extensions;
 using PhotoForge.Api.Features.Auth;
+using PhotoForge.Api.Features.Galleries;
 using PhotoForge.Api.Features.Users;
 using PhotoForge.Application;
 using PhotoForge.Core.Services;
@@ -46,5 +48,6 @@ app.UseResponseCompression();
 
 app.MapUsersEndpoints();
 app.MapAuthEndpoints();
+app.MapGalleriesEndpoints();
 
 app.Run();

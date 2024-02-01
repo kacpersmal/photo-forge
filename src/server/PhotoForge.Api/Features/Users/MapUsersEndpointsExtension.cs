@@ -1,7 +1,5 @@
 ﻿using MediatR;
-
 using Microsoft.AspNetCore.Mvc;
-
 using PhotoForge.Application.Features.Users.CreateUser;
 using PhotoForge.Application.Features.Users.GetAllUsers;
 
@@ -14,15 +12,19 @@ public static class MapUsersEndpointsExtension
         var root = app.MapGroup("users")
             .WithTags("Users");
 
-        root.MapPost("", async ([FromBody] CreateUserCommand req, [FromServices] IMediator mediator) =>
-        {
-            await mediator.Send(req);
-            Results.Ok();
-        });
+        root.MapPost("", CreateUser);
 
-        root.MapGet("", async ([AsParameters] GetAllUsersQuery query, [FromServices] IMediator mediator) 
-                => Results.Ok(await mediator.Send(query)))
+        root.MapGet("", GetAllUsers)
             .Produces<GetAllUsersQueryResult>()
             .RequireAuthorization(AuthPolicies.Admin);
+    }
+
+    private static async Task<IResult> GetAllUsers([AsParameters] GetAllUsersQuery query, [FromServices] IMediator mediator)
+        => Results.Ok(await mediator.Send(query));
+
+    private static async Task CreateUser([FromBody] CreateUserCommand req, [FromServices] IMediator mediator)
+    {
+        await mediator.Send(req);
+        Results.Ok();
     }
 }
