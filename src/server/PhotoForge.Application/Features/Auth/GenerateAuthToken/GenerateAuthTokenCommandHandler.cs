@@ -23,7 +23,7 @@ public class GenerateAuthTokenCommandHandler(AppDbContext context, IAuthTokenHel
             throw new AuthException();
 
         var sessionExpirationDate =
-            timeProvider.GetCurrentDateTime().AddMinutes(config.GetValue<int>("Jwt:SessionExpiration"));
+            timeProvider.GetCurrentDateTime().AddDays(config.GetValue<int>("Jwt:SessionExpiration"));
 
         var refreshToken = new Token(sessionExpirationDate, randomProvider.GetRandomString(64));
         

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using PhotoForge.Api.Features.Auth.Requests;
 using PhotoForge.Application.Features.Auth.Dto;
 using PhotoForge.Application.Features.Auth.GenerateAuthToken;
+using PhotoForge.Application.Features.Auth.RefreshToken;
 
 namespace PhotoForge.Api.Features.Auth;
 
@@ -28,5 +29,8 @@ public static class MapAuthEndpointsExtension
         })
         .Produces<AuthTokenDto>();
 
+        root.MapPost("refresh-token", async ([FromBody] RefreshTokenCommand command, [FromServices] IMediator mediator)
+            => Results.Ok(await mediator.Send(command)))
+            .Produces<AuthTokenDto>();
     }
 }
