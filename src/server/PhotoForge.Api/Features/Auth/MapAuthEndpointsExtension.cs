@@ -1,7 +1,6 @@
 ﻿using MediatR;
 
 using Microsoft.AspNetCore.Mvc;
-
 using PhotoForge.Api.Features.Auth.Requests;
 using PhotoForge.Application.Features.Auth.Dto;
 using PhotoForge.Application.Features.Auth.GenerateAuthToken;
