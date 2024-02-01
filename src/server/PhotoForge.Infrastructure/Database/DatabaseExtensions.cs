@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace PhotoForge.Infrastructure.Database;
 
-public static class DatabaseExtensions
+internal static class DatabaseExtensions
 {
     public static void AddAppDbContext(this IServiceCollection services, IConfiguration config)
     {

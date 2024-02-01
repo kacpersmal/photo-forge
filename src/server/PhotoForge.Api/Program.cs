@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
 
 using PhotoForge.Api.Extensions;
@@ -5,7 +6,9 @@ using PhotoForge.Api.Features.Auth;
 using PhotoForge.Api.Features.Users;
 using PhotoForge.Application;
 using PhotoForge.Core.Services;
+using PhotoForge.Infrastructure;
 using PhotoForge.Infrastructure.Database;
+using PhotoForge.Infrastructure.Storage;
 
 using Serilog;
 
@@ -20,7 +23,8 @@ builder.Services.ConfigureCors();
 builder.Services.AddResponseCaching();
 builder.Services.AddResponseCompression();
 builder.Services.AddCoreServices();
-builder.Services.AddAppDbContext(builder.Configuration);
+builder.Services.AddAntiforgery();
+builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddApplicationServices(builder.Configuration);
 
 builder.ConfigureAuthorization();
@@ -35,7 +39,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseCors();
-
+app.UseAntiforgery();
 //app.UseMiddleware<JwtMiddleware>();
 //app.UseAuthorization();
 
@@ -46,4 +50,5 @@ app.UseResponseCompression();
 
 app.MapUsersEndpoints();
 app.MapAuthEndpoints();
+
 app.Run();
