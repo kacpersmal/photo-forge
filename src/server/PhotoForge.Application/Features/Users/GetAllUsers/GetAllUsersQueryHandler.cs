@@ -13,7 +13,7 @@ internal class GetAllUsersQueryHandler(AppDbContext context, IMapper mapper) : I
             query = query.Where(x =>
                 x.FullName.FirstName.Contains(request.SearchString) ||
                 x.FullName.LastName.Contains(request.SearchString) || x.Email.Address.Contains(request.SearchString));
-
+        query = query.OrderBy(x => x.Email.Address);
         query = query.Skip(request.Items * request.Page).Take(request.Items).AsNoTracking();
         
         return new GetAllUsersQueryResult()
