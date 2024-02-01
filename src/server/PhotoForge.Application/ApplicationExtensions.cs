@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
+using PhotoForge.Application.Features.Auth.Services.AuthTokenHelper;
+
 namespace PhotoForge.Application;
 
 public static class ApplicationExtensions
@@ -9,5 +11,7 @@ public static class ApplicationExtensions
     {
         services.AddMediatR(conf => conf.RegisterServicesFromAssembly(typeof(ApplicationExtensions).Assembly));
         services.AddAutoMapper(typeof(ApplicationExtensions).Assembly);
+
+        services.AddTransient<IAuthTokenHelperService, AuthTokenHelperService>();
     }
 }

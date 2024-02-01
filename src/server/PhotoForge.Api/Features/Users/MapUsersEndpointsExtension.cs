@@ -11,7 +11,8 @@ public static class MapUsersEndpointsExtension
 {
     public static void MapUsersEndpoints(this WebApplication app)
     {
-        var root = app.MapGroup("users");
+        var root = app.MapGroup("users")
+            .WithTags("Users");
 
         root.MapPost("", async ([FromBody] CreateUserCommand req, [FromServices] IMediator mediator) =>
         {
@@ -20,6 +21,8 @@ public static class MapUsersEndpointsExtension
         });
 
         root.MapGet("", async ([AsParameters] GetAllUsersQuery query, [FromServices] IMediator mediator) 
-                => Results.Ok(await mediator.Send(query)));
+                => Results.Ok(await mediator.Send(query)))
+            .Produces<GetAllUsersQueryResult>()
+            .RequireAuthorization(AuthPolicies.Admin);
     }
 }

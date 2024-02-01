@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
+using PhotoForge.Core.Services.CryptoRandomProvider;
 using PhotoForge.Core.Services.Hashing;
 using PhotoForge.Core.Services.TimeProvider;
 
@@ -11,5 +12,6 @@ public static class CoreServicesExtensions
     {
         services.AddTransient<IHashedValueService, HashedValueService>();
         services.AddSingleton<ITimeProviderService,TimeProviderService>();
+        services.AddTransient<ICryptoRandomProviderService, CryptoRandomProviderService>();
     }
 }

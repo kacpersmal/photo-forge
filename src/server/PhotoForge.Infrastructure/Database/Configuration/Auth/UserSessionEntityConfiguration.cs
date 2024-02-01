@@ -13,6 +13,9 @@ public class UserSessionEntityConfiguration : IEntityTypeConfiguration<UserSessi
         
         builder.HasKey(u => u.Id);
 
+        builder.OwnsOne(x => x.RefreshToken);
+        builder.OwnsOne(x => x.Token);
+        
         builder.HasOne(x => x.User)
             .WithMany()
             .HasForeignKey(x => x.UserId)

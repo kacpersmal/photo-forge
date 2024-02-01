@@ -1,4 +1,5 @@
 ﻿using PhotoForge.Core.Features.Users;
+using PhotoForge.Core.ValueObjects;
 
 namespace PhotoForge.Core.Features.Auth;
 
@@ -6,8 +7,8 @@ public class UserSession
 {
     public Guid Id { get; private set; } = Guid.NewGuid();
 
-    public string RefreshToken { get; private set; } = null!;
-    public string Token { get; private set; } = null!;
+    public Token RefreshToken { get; private set; } = null!;
+    public Token Token { get; private set; } = null!;
 
     public Guid UserId { get; private set; }
     public User User { get; private set; } = null!;
@@ -18,7 +19,7 @@ public class UserSession
 
     public UserSession() { }
 
-    public UserSession(User user, string refreshToken)
+    public UserSession(User user, Token refreshToken)
     {
         User = user;
         UserId = user.Id;
@@ -26,7 +27,7 @@ public class UserSession
         CreationDate = DateTime.UtcNow;
     }
     
-    public UserSession SetToken(string token, string refreshToken)
+    public UserSession SetToken(Token token, Token refreshToken)
     {
         if (refreshToken != RefreshToken)
             throw new ArgumentException("Refresh token does not match", nameof(refreshToken));
