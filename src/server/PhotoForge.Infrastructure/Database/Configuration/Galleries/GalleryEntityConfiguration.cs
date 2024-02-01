@@ -12,7 +12,7 @@ internal class GalleryEntityConfiguration : IEntityTypeConfiguration<Gallery>
         builder.ToTable(nameof(Gallery), "Galleries");
 
         builder.HasKey(x => x.Id);
-
+        builder.OwnsOne(x => x.Slug);
         builder.OwnsOne(x => x.AccessCode);
 
         builder

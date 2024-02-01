@@ -7,7 +7,7 @@ namespace PhotoForge.Core.Features.Galleries;
 public class Gallery : IRoot
 {
     public Guid Id { get; private set; } = Guid.NewGuid();
-    
+    public Slug Slug { get; private set; } = null!;
     public bool IsPublic { get; private set; }
     public string Name { get; private set; } = null!;
     public string Description { get; private set; } = null!;
@@ -24,6 +24,7 @@ public class Gallery : IRoot
     public Gallery(string name, string description, bool isPublic = false)
     {
         Name = name;
+        Slug = new Slug(name);
         Description = description;
         IsPublic = isPublic;
     }
@@ -86,6 +87,13 @@ public class Gallery : IRoot
     public Gallery RemoveResources(IEnumerable<GalleryResource> resources)
     {
         Resources = Resources.Except(resources);
+        LastUpdateDate = DateTime.UtcNow;
+        return this;
+    }
+
+    public Gallery SetSlug(Slug slug)
+    {
+        this.Slug = slug;
         LastUpdateDate = DateTime.UtcNow;
         return this;
     }
