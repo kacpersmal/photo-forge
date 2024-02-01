@@ -40,10 +40,6 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseCors();
 app.UseAntiforgery();
-//app.UseMiddleware<JwtMiddleware>();
-//app.UseAuthorization();
-
-
 
 app.UseResponseCaching();
 app.UseResponseCompression();

@@ -34,13 +34,13 @@ public class GetAllUsersQueryHandlerTests
         });
         var mapper = mapperConfig.CreateMapper();
         var handler = new GetAllUsersQueryHandler(context, mapper);
-        var query = new GetAllUsersQuery { Page = 0, Items = 2, SearchString = "" };
+        var query = new GetAllUsersQuery { Page = 0, Items = 3, SearchString = "" };
 
         // Act
         var result = await handler.Handle(query, CancellationToken.None);
 
         // Assert
-        result.Users.Should().HaveCount(2);
+        result.Users.Should().HaveCount(3);
         result.Users.Should().ContainSingle(user => user.FullName == "John Doe");
         result.Users.Should().ContainSingle(user => user.FullName == "Jane Doe");
     }
