@@ -1,11 +1,11 @@
-import Navigation from "./shared/layout/navigation/navigation-bar"
+import Navigation from "./shared/layout/navigation/navigation-bar";
 
 function App() {
   return (
     <>
-        <Navigation/>
+      <Navigation />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

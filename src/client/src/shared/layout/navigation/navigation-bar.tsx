@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button";
 const NavigationItems: NavigationButtonProps[] = [
   { icon: <Home className="h-5 w-5 mr-1 inline-block" />, text: "Poznajmy się", href: "#" },
   { icon: <Camera className="h-5 w-5 mr-1 inline-block" />, text: "Galeria", href: "#" },
-  { icon: <Mail className="h-5 w-5 mr-1 inline-block" />, text: "Kontakt", href: "#" }
-]
+  { icon: <Mail className="h-5 w-5 mr-1 inline-block" />, text: "Kontakt", href: "#" },
+];
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,13 +18,13 @@ const Navigation = () => {
         <div className="relative flex items-center justify-between h-16">
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex-shrink-0 flex items-center text-center">
-              <h1 className="font-bold tracking-tight text-2xl lg:text-3xl">
-                Gabriela Mirek
-              </h1>
+              <h1 className="font-bold tracking-tight text-2xl lg:text-3xl">Gabriela Mirek</h1>
             </div>
             <div className="hidden sm:block sm:ml-6">
               <div className="flex space-x-4">
-                {NavigationItems.map((item, index) => (<NavigationButton key={index} {...item} />))}
+                {NavigationItems.map((item, index) => (
+                  <NavigationButton key={index} {...item} />
+                ))}
               </div>
             </div>
             <div className="sm:hidden ml-auto mr-0">
@@ -37,13 +37,15 @@ const Navigation = () => {
         {isOpen && (
           <div className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {NavigationItems.map((item, index) => (<NavigationButton key={index} {...item} />))}
+              {NavigationItems.map((item, index) => (
+                <NavigationButton key={index} {...item} />
+              ))}
             </div>
           </div>
         )}
       </div>
     </nav>
   );
-}
+};
 
 export default Navigation;
