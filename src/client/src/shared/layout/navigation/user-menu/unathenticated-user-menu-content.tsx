@@ -1,4 +1,4 @@
-import { Camera, LogIn, LogOut, Mail, User, UserRoundPlus } from "lucide-react";
+import { LogIn, UserRoundPlus } from "lucide-react";
 
 import {
   DropdownMenuContent,
