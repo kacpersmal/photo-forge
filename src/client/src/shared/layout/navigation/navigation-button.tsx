@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 type NavigationButtonProps = {
   icon: React.ReactNode;
@@ -9,10 +10,10 @@ type NavigationButtonProps = {
 const NavigationButton = ({ icon, text, href }: NavigationButtonProps) => {
   return (
     <Button asChild variant="ghost">
-      <a href={href}>
+      <Link to={href} className="flex flex-row items-center justify-between">
         {icon}
         {text}
-      </a>
+      </Link>
     </Button>
   );
 };
