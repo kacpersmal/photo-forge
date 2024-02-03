@@ -1,9 +1,9 @@
 import { Camera, Home, Mail, Menu } from "lucide-react";
 import NavigationButton, { NavigationButtonProps } from "./navigation-button";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import UserMenu from "./user-menu/user-menu";
-import { motion } from "framer-motion";
+import { motion, useViewportScroll } from "framer-motion";
 
 const NavigationItems: NavigationButtonProps[] = [
   { icon: <Home className="h-5 w-5 mr-1 inline-block" />, text: "Poznajmy się", href: "/" },
@@ -26,8 +26,24 @@ const MobileNavigation = () => {
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const [isScrollingUp, setIsScrollingUp] = useState(true);
+  const { scrollY } = useViewportScroll();
+  const lastY = useRef(0);
+
+  useEffect(() => {
+    return scrollY.onChange(v => {
+      setIsScrollingUp(v <= lastY.current);
+      lastY.current = v;
+    });
+  }, [scrollY]);
+
   return (
-    <nav className="bg-white dark:bg-background shadow">
+    <motion.nav
+      className="bg-white dark:bg-background shadow sticky top-0 z-50 opacity-75"
+      initial={{ y: 0 }}
+      animate={{ y: isScrollingUp ? 0 : "-100%" }}
+      transition={{ duration: 0.3 }}
+    >
       <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
@@ -48,7 +64,6 @@ const Navigation = () => {
               <UserMenu />
               <Button onClick={() => setIsOpen(!isOpen)} variant="link">
                 <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
-                  {" "}
                   <Menu className="h-6 w-6" />
                 </motion.div>
               </Button>
@@ -57,7 +72,7 @@ const Navigation = () => {
         </div>
         {isOpen && <MobileNavigation />}
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 

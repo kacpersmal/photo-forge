@@ -28,6 +28,8 @@
     "@radix-ui/react-switch": "^1.0.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "embla-carousel-autoplay": "^8.0.0-rc22",
+    "embla-carousel-react": "^8.0.0-rc22",
     "framer-motion": "^11.0.3",
     "localforage": "^1.10.0",
     "lucide-react": "^0.321.0",
