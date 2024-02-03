@@ -12,9 +12,9 @@
     "browser": true,
     "amd": true,
     "node": true
-},
+  },
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "npm run build && vite preview",
@@ -22,6 +22,7 @@
     "prettier:fix": "npm run prettier -- --write"
   },
   "dependencies": {
+    "@radix-ui/react-dropdown-menu": "^2.0.6",
     "@radix-ui/react-slot": "^1.0.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
