@@ -2,18 +2,18 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useRef } from "react";
 
 const initialState = { currentIndex: 0, direction: 1 };
 
-function reducer(state:any, action:any) {
+function reducer(state: any, action: any) {
   switch (action.type) {
-    case 'UPDATE_INDEX':
+    case "UPDATE_INDEX":
       return {
         ...state,
         currentIndex: state.currentIndex + state.direction,
       };
-    case 'UPDATE_DIRECTION':
+    case "UPDATE_DIRECTION":
       return {
         ...state,
         direction: action.payload.newDirection,
@@ -25,14 +25,19 @@ function reducer(state:any, action:any) {
 
 const AnchorNav = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-
+  const navbarHeight = useRef(0);
   useEffect(() => {
+    const navbar = document.querySelector("nav");
+    if (navbar) {
+      const rect = navbar.getBoundingClientRect();
+      navbarHeight.current = rect.height;
+    }
     const handleScroll = () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       const scrollHeight = document.documentElement.scrollHeight;
       const clientHeight = document.documentElement.clientHeight;
 
-      if (scrollTop === 0) {
+      if (scrollTop <= navbarHeight.current) {
         // At the top of the page
         dispatch({ type: "UPDATE_DIRECTION", payload: { newDirection: 1 } });
       } else if (scrollTop + clientHeight === scrollHeight) {
@@ -46,7 +51,9 @@ const AnchorNav = () => {
   }, []);
 
   const handleClick = () => {
-    const anchors = Array.from(document.querySelectorAll('[data-name]:not([data-name=""])')) as HTMLElement[];
+    const anchors = Array.from(
+      document.querySelectorAll('[data-name]:not([data-name=""])'),
+    ) as HTMLElement[];
     if (anchors.length === 0) return;
 
     const newIndex = state.currentIndex + state.direction;
@@ -54,14 +61,14 @@ const AnchorNav = () => {
     // Change direction if at the next start or end
     if (newIndex < 0 || newIndex >= anchors.length) {
       const newDirection = -state.direction;
-      dispatch({ type: 'UPDATE_DIRECTION', payload: { newDirection } });
+      dispatch({ type: "UPDATE_DIRECTION", payload: { newDirection } });
     }
 
-    dispatch({ type: 'UPDATE_INDEX' });
+    dispatch({ type: "UPDATE_INDEX" });
 
     // Scroll to the new anchor if it exists
     if (anchors[state.currentIndex]) {
-      anchors[state.currentIndex].scrollIntoView({ behavior: 'smooth' });
+      anchors[state.currentIndex].scrollIntoView({ behavior: "smooth" });
     }
   };
 
