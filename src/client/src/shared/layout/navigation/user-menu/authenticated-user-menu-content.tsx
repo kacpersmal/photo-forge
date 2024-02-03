@@ -1,7 +1,6 @@
 import { Bell, Camera, LogOut, User } from "lucide-react";
 
 import {
-  DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
@@ -11,7 +10,7 @@ import {
 const AuthenticatedUserMenuContent = () => {
   return (
     <>
-      <DropdownMenuContent className="w-56">
+      <DropdownMenuGroup>
         <DropdownMenuLabel>Moje konto</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
@@ -33,7 +32,7 @@ const AuthenticatedUserMenuContent = () => {
             <span>Wyloguj się</span>
           </DropdownMenuItem>
         </DropdownMenuGroup>
-      </DropdownMenuContent>
+      </DropdownMenuGroup>
     </>
   );
 };

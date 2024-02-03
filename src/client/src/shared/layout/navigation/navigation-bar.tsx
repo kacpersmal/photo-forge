@@ -3,6 +3,7 @@ import NavigationButton, { NavigationButtonProps } from "./navigation-button";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import UserMenu from "./user-menu/user-menu";
+import { motion } from "framer-motion";
 
 const NavigationItems: NavigationButtonProps[] = [
   { icon: <Home className="h-5 w-5 mr-1 inline-block" />, text: "Poznajmy się", href: "/" },
@@ -26,7 +27,7 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow">
+    <nav className="bg-white dark:bg-background shadow">
       <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
@@ -46,7 +47,10 @@ const Navigation = () => {
             <div className="sm:hidden ml-auto mr-0">
               <UserMenu />
               <Button onClick={() => setIsOpen(!isOpen)} variant="link">
-                <Menu className="h-6 w-6" />
+                <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
+                  {" "}
+                  <Menu className="h-6 w-6" />
+                </motion.div>
               </Button>
             </div>
           </div>

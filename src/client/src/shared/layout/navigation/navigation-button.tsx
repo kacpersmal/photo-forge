@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 type NavigationButtonProps = {
@@ -9,12 +10,14 @@ type NavigationButtonProps = {
 
 const NavigationButton = ({ icon, text, href }: NavigationButtonProps) => {
   return (
-    <Button asChild variant="ghost">
-      <Link to={href} className="flex flex-row items-center justify-between">
-        {icon}
-        {text}
-      </Link>
-    </Button>
+    <motion.div whileTap={{ scale: 0.8 }}>
+      <Button asChild variant="ghost">
+        <Link to={href} className="flex flex-row items-center justify-between">
+          {icon}
+          {text}
+        </Link>
+      </Button>
+    </motion.div>
   );
 };
 
