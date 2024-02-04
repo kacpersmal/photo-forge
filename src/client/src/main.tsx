@@ -7,7 +7,7 @@ import { ThemeProvider } from "./components/theme-provider.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <ThemeProvider defaultTheme="light" storageKey="photo-ui-theme">
+    <ThemeProvider defaultTheme="dark" storageKey="photo-ui-theme">
       <RouterProvider router={AppRouter} />
     </ThemeProvider>
   </React.StrictMode>,

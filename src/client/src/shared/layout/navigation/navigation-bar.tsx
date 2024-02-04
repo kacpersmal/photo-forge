@@ -39,7 +39,7 @@ const Navigation = () => {
 
   return (
     <motion.nav
-      className="bg-white dark:bg-background shadow sticky top-0 z-50 opacity-90 dark:opacity-75"
+      className="bg-background shadow sticky top-0 z-50 opacity-90 dark:opacity-75"
       initial={{ y: 0 }}
       animate={{ y: isScrollingUp ? 0 : "-100%" }}
       transition={{ duration: 0.3 }}
