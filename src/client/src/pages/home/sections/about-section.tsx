@@ -6,23 +6,23 @@ const AboutSection = ({ id }: AboutSectionProps) => {
   return (
     <Section id={id} bgImage="https://source.unsplash.com/random/1">
       <div className="grid h-screen place-items-center">
-        <div className="md:grid grid-rows-1 grid-cols-2 place-items-center w-full h-full">
+        <div className="size-full grid-cols-2 grid-rows-1 place-items-center md:grid">
           <FadeInWhenVisible className="p-2">
-            <h1 className="text-3xl md:text-5xl  md:p-0 font-bold text-left md:mb-4 md:mr-4 text-primary">
+            <h1 className="text-left text-3xl  font-bold text-primary md:mb-4 md:mr-4 md:p-0 md:text-5xl">
               Poznajmy się
             </h1>
-            <p className="text-white max-w-xl text-lg">
+            <p className="max-w-xl text-lg text-white">
               Jestem Gabriela, pełna energii i entuzjazmu młoda artystka z pasją do fotografii i
               muzyki. Moje dni wypełnione są dźwiękami, a moim aparatem staram się zatrzymać każdy
               unikalny moment, przechwycić emocje i opowiedzieć historię, która nieśmiało szepcze
               zza obiektywu.
             </p>
           </FadeInWhenVisible>
-          <FadeInWhenVisible delay={1} className="w-full h-full">
+          <FadeInWhenVisible delay={1} className="size-full">
             <img
               src="https://source.unsplash.com/random/1"
               alt="Preview 1"
-              className="object-cover w-full max-h-lvh p-2 md:p-0"
+              className="max-h-lvh w-full object-cover p-2 md:p-0"
             />
           </FadeInWhenVisible>
         </div>

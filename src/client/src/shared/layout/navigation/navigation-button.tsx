@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 type NavigationButtonProps = {
   icon: React.ReactNode;

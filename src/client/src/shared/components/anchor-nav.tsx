@@ -73,12 +73,12 @@ const AnchorNav = () => {
   };
 
   return (
-    <Button size="icon" className="fixed right-6 bottom-6 text-background" onClick={handleClick}>
+    <Button size="icon" className="fixed bottom-6 right-6 text-background" onClick={handleClick}>
       <motion.span
         animate={{ rotate: state.direction === 1 ? 0 : 180 }}
         transition={{ duration: 0.2, delay: 0.25 }}
       >
-        <ArrowDown className="h-6 w-6" />
+        <ArrowDown className="size-6" />
       </motion.span>
     </Button>
   );

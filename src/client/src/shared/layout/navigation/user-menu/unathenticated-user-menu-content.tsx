@@ -15,11 +15,11 @@ const UnauthenticatedUserMenuContent = () => {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            <LogIn className="mr-2 h-4 w-4" />
+            <LogIn className="mr-2 size-4" />
             <span>Zaloguj się</span>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <UserRoundPlus className="mr-2 h-4 w-4" />
+            <UserRoundPlus className="mr-2 size-4" />
             <span>Utwórz nowe konto</span>
           </DropdownMenuItem>
         </DropdownMenuGroup>

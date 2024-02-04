@@ -12,9 +12,9 @@ type PreviewSectionProps = {
 const PreviewSection = ({ id }: PreviewSectionProps) => {
   return (
     <Section id={id} className="grid h-screen place-items-center">
-      <div className="md:grid grid-rows-1 grid-cols-2 place-items-center">
+      <div className="grid-cols-2 grid-rows-1 place-items-center md:grid">
         <FadeInWhenVisible className="p-2">
-          <h1 className="text-3xl md:text-5xl  md:p-0 font-bold text-left md:mb-4 md:mr-4 text-primary">
+          <h1 className="text-left text-3xl  font-bold text-primary md:mb-4 md:mr-4 md:p-0 md:text-5xl">
             O to parę moich ujęć
           </h1>
           <p className="max-w-xl text-lg font-semibold">Spójrz na to z mojej perspektywy</p>
@@ -46,7 +46,7 @@ const PreviewSection = ({ id }: PreviewSectionProps) => {
                       <img
                         src={`https://source.unsplash.com/random?sig=${gridIndex * 100 + index}`}
                         alt={`Preview ${index}`}
-                        className="object-cover w-full h-full py-2"
+                        className="size-full object-cover py-2"
                       />
                     ))}
                   </div>

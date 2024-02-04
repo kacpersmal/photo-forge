@@ -2,7 +2,7 @@ type IconProps = { className?: string };
 const InstagramIcon = (props: IconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    className={props.className ? props.className : "w-10 h-10"}
+    className={props.className ? props.className : "size-10"}
     fill="currentColor"
     viewBox="0 0 24 24"
   >

@@ -3,7 +3,7 @@ const TikTokIcon = (props: IconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 448 512"
-    className={props.className ? props.className : "w-10 h-10"}
+    className={props.className ? props.className : "size-10"}
   >
     {/* <!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --> */}
     <path

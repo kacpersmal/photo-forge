@@ -15,7 +15,7 @@ const Section = ({ id, bgImage, children, className }: SectionProps) => {
       {bgImage == undefined ? (
         children
       ) : (
-        <div className="min-h-lvh bg-black bg-opacity-50">{children}</div>
+        <div className="min-h-lvh bg-black/50">{children}</div>
       )}
     </div>
   );
