@@ -12,13 +12,13 @@ const AboutSection = ({ id }: AboutSectionProps) => {
       <div className="h-full bg-black bg-opacity-50 flex items-center justify-center">
         <div className="text-left text-white flex flex-col md:flex-row items-center justify-evenly">
           <FadeInWhenVisible>
-             <div className="p-2">
-               <h1 className="text-2xl md:text-5xl font-bold mb-4"> Witaj na moim portfolio</h1>
+            <div className="p-2">
+              <h1 className="text-2xl md:text-5xl font-bold mb-4"> Witaj na moim portfolio</h1>
               <p className="text-sm md:text-2xl">
                 Witaj w moim portfolio, gdzie światło staje się historią, a cienie malują emocje.
                 Każde zdjęcie to krok w niezwykłą podróż przez moje obiektywy.
               </p>
-             </div>
+            </div>
           </FadeInWhenVisible>
           <FadeInWhenVisible delay={1}>
             <div className="md:mr-0 md:ml-auto mb-0 mt-auto">
