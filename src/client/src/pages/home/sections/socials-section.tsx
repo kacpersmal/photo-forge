@@ -28,23 +28,23 @@ const SocialsSection = ({ id }: SocialsSectionProps) => {
         </FadeInWhenVisible>
 
         <FadeInWhenVisible delay={1.5} className="grid grid-cols-2 grid-rows-3 gap-2">
-          <a className="flex flex-row items-center gap-2">
+          <a href="https://www.instagram.com/" className="flex flex-row items-center gap-2">
             <InstagramIcon className="size-12 bg-primary p-2 text-background" />
             @Instagram
           </a>
-          <a className="flex flex-row items-center gap-2">
+          <a href="https://www.instagram.com/" className="flex flex-row items-center gap-2">
             <FacebookIcon className="size-12 bg-primary p-2 text-background" />
             @Facebook
           </a>
-          <a className="flex flex-row items-center gap-2">
+          <a href="https://www.instagram.com/" className="flex flex-row items-center gap-2">
             <TikTokIcon className="size-12 bg-primary p-2 text-background" />
             @TikTok
           </a>
-          <a className="flex flex-row items-center gap-2">
+          <a href="https://www.instagram.com/" className="flex flex-row items-center gap-2">
             <Mail className="size-12 bg-primary p-2 text-background" />
             @email
           </a>
-          <a className="flex flex-row items-center gap-2">
+          <a href="https://www.instagram.com/" className="flex flex-row items-center gap-2">
             <Phone className="size-12 bg-primary p-2 text-background" />
             @phone
           </a>
