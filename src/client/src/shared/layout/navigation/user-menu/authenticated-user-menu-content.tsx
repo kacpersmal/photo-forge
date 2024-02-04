@@ -1,11 +1,10 @@
-import { Bell, Camera, LogOut, User } from "lucide-react";
-
 import {
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
+import { Bell, Camera, LogOut, User } from "lucide-react";
 
 const AuthenticatedUserMenuContent = () => {
   return (

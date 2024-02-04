@@ -7,7 +7,7 @@ export default function ErrorPage() {
   const error = useRouteError() as any;
 
   return (
-    <div id="error-page" className="flex h-screen items-center justify-center">
+    <div className="flex h-screen items-center justify-center" id="error-page">
       <Card>
         <CardHeader>
           <CardTitle>Ooops!</CardTitle>

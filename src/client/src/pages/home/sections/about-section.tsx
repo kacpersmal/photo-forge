@@ -4,7 +4,7 @@ import FadeInWhenVisible from "@/shared/utils/animations/fade-in-when-visible";
 type AboutSectionProps = { id: string };
 const AboutSection = ({ id }: AboutSectionProps) => {
   return (
-    <Section id={id} bgImage="https://source.unsplash.com/random/1">
+    <Section bgImage="https://source.unsplash.com/random/1" id={id}>
       <div className="grid h-screen place-items-center">
         <div className="size-full grid-cols-2 grid-rows-1 place-items-center md:grid">
           <FadeInWhenVisible className="p-2">
@@ -18,11 +18,11 @@ const AboutSection = ({ id }: AboutSectionProps) => {
               zza obiektywu.
             </p>
           </FadeInWhenVisible>
-          <FadeInWhenVisible delay={1} className="size-full">
+          <FadeInWhenVisible className="size-full" delay={1}>
             <img
-              src="https://source.unsplash.com/random/1"
               alt="Preview 1"
               className="max-h-lvh w-full object-cover p-2 md:p-0"
+              src="https://source.unsplash.com/random/1"
             />
           </FadeInWhenVisible>
         </div>

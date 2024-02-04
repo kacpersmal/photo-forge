@@ -11,7 +11,7 @@ type PreviewSectionProps = {
 };
 const PreviewSection = ({ id }: PreviewSectionProps) => {
   return (
-    <Section id={id} className="grid h-screen place-items-center">
+    <Section className="grid h-screen place-items-center" id={id}>
       <div className="grid-cols-2 grid-rows-1 place-items-center md:grid">
         <FadeInWhenVisible className="p-2">
           <h1 className="text-left text-3xl  font-bold text-primary md:mb-4 md:mr-4 md:p-0 md:text-5xl">
@@ -24,12 +24,12 @@ const PreviewSection = ({ id }: PreviewSectionProps) => {
             </Button>
           </Link>
         </FadeInWhenVisible>
-        <FadeInWhenVisible delay={1} className="">
+        <FadeInWhenVisible className="" delay={1}>
           <Carousel
             opts={{
               align: "start",
-              loop: true,
               dragFree: true,
+              loop: true,
             }}
             plugins={[
               Autoplay({
@@ -40,13 +40,13 @@ const PreviewSection = ({ id }: PreviewSectionProps) => {
           >
             <CarouselContent className="">
               {Array.from({ length: 10 }).map((_, index) => (
-                <CarouselItem key={index} className="basis-1/3">
+                <CarouselItem className="basis-1/3" key={index}>
                   <div className=" aspect-square">
                     {Array.from({ length: 3 }).map((_, gridIndex) => (
                       <img
-                        src={`https://source.unsplash.com/random?sig=${gridIndex * 100 + index}`}
                         alt={`Preview ${index}`}
                         className="size-full object-cover py-2"
+                        src={`https://source.unsplash.com/random?sig=${gridIndex * 100 + index}`}
                       />
                     ))}
                   </div>

@@ -1,15 +1,15 @@
 type SectionProps = {
-  id: string;
-  className?: string;
-  children: React.ReactNode;
   bgImage?: string;
+  children: React.ReactNode;
+  className?: string;
+  id: string;
 };
-const Section = ({ id, bgImage, children, className }: SectionProps) => {
+const Section = ({ bgImage, children, className, id }: SectionProps) => {
   return (
     <div
-      id={id}
-      data-name={id}
       className={["min-h-lvh bg-cover bg-center snap-start", className].join(" ")}
+      data-name={id}
+      id={id}
       style={{ backgroundImage: bgImage ? `url(${bgImage})` : "none" }}
     >
       {bgImage == undefined ? (

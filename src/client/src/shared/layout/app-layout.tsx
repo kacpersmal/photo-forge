@@ -1,5 +1,6 @@
-import Navigation from "./navigation/navigation-bar";
 import { Outlet } from "react-router";
+
+import Navigation from "./navigation/navigation-bar";
 
 const AppLayout = () => {
   return (

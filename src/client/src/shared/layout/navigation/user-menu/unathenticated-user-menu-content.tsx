@@ -1,11 +1,10 @@
-import { LogIn, UserRoundPlus } from "lucide-react";
-
 import {
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
+import { LogIn, UserRoundPlus } from "lucide-react";
 
 const UnauthenticatedUserMenuContent = () => {
   return (

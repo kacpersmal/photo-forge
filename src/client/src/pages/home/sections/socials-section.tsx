@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 type SocialsSectionProps = { id: string };
 const SocialsSection = ({ id }: SocialsSectionProps) => {
   return (
-    <Section id={id} data-name={id} className="grid h-screen place-items-center">
+    <Section className="grid h-screen place-items-center" data-name={id} id={id}>
       <div className="text-center">
         <FadeInWhenVisible>
           <h1 className="mb-4 text-4xl font-bold text-primary">Skontakuj się ze mną</h1>
@@ -27,24 +27,24 @@ const SocialsSection = ({ id }: SocialsSectionProps) => {
           </div>
         </FadeInWhenVisible>
 
-        <FadeInWhenVisible delay={1.5} className="grid grid-cols-2 grid-rows-3 gap-2">
-          <a href="https://www.instagram.com/" className="flex flex-row items-center gap-2">
+        <FadeInWhenVisible className="grid grid-cols-2 grid-rows-3 gap-2" delay={1.5}>
+          <a className="flex flex-row items-center gap-2" href="https://www.instagram.com/">
             <InstagramIcon className="size-12 bg-primary p-2 text-background" />
             @Instagram
           </a>
-          <a href="https://www.instagram.com/" className="flex flex-row items-center gap-2">
+          <a className="flex flex-row items-center gap-2" href="https://www.instagram.com/">
             <FacebookIcon className="size-12 bg-primary p-2 text-background" />
             @Facebook
           </a>
-          <a href="https://www.instagram.com/" className="flex flex-row items-center gap-2">
+          <a className="flex flex-row items-center gap-2" href="https://www.instagram.com/">
             <TikTokIcon className="size-12 bg-primary p-2 text-background" />
             @TikTok
           </a>
-          <a href="https://www.instagram.com/" className="flex flex-row items-center gap-2">
+          <a className="flex flex-row items-center gap-2" href="https://www.instagram.com/">
             <Mail className="size-12 bg-primary p-2 text-background" />
             @email
           </a>
-          <a href="https://www.instagram.com/" className="flex flex-row items-center gap-2">
+          <a className="flex flex-row items-center gap-2" href="https://www.instagram.com/">
             <Phone className="size-12 bg-primary p-2 text-background" />
             @phone
           </a>

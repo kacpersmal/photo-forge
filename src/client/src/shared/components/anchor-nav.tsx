@@ -39,10 +39,10 @@ const AnchorNav = () => {
 
       if (scrollTop <= navbarHeight.current) {
         // At the top of the page
-        dispatch({ type: "UPDATE_DIRECTION", payload: { newDirection: 1 } });
+        dispatch({ payload: { newDirection: 1 }, type: "UPDATE_DIRECTION" });
       } else if (scrollTop + clientHeight === scrollHeight) {
         // At the bottom of the page
-        dispatch({ type: "UPDATE_DIRECTION", payload: { newDirection: -1 } });
+        dispatch({ payload: { newDirection: -1 }, type: "UPDATE_DIRECTION" });
       }
     };
 
@@ -51,6 +51,7 @@ const AnchorNav = () => {
   }, []);
 
   const handleClick = () => {
+    // eslint-disable-next-line xss/no-mixed-html
     const anchors = Array.from(
       document.querySelectorAll('[data-name]:not([data-name=""])'),
     ) as HTMLElement[];
@@ -61,7 +62,7 @@ const AnchorNav = () => {
     // Change direction if at the next start or end
     if (newIndex < 0 || newIndex >= anchors.length) {
       const newDirection = -state.direction;
-      dispatch({ type: "UPDATE_DIRECTION", payload: { newDirection } });
+      dispatch({ payload: { newDirection }, type: "UPDATE_DIRECTION" });
     }
 
     dispatch({ type: "UPDATE_INDEX" });
@@ -73,10 +74,10 @@ const AnchorNav = () => {
   };
 
   return (
-    <Button size="icon" className="fixed bottom-6 right-6 text-background" onClick={handleClick}>
+    <Button className="fixed bottom-6 right-6 text-background" onClick={handleClick} size="icon">
       <motion.span
         animate={{ rotate: state.direction === 1 ? 0 : 180 }}
-        transition={{ duration: 0.2, delay: 0.25 }}
+        transition={{ delay: 0.25, duration: 0.2 }}
       >
         <ArrowDown className="size-6" />
       </motion.span>

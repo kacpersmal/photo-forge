@@ -5,7 +5,7 @@ type HeroSectionProps = {
 };
 const HeroSection = ({ id }: HeroSectionProps) => {
   return (
-    <Section id={id} bgImage="https://source.unsplash.com/random">
+    <Section bgImage="https://source.unsplash.com/random" id={id}>
       <div className="grid h-screen place-items-center">
         <div className="p-2 md:p-0">
           <h1 className="mb-4 text-5xl font-bold text-primary">"Uchwyć Chwilę, Zatrzymaj Czas"</h1>

@@ -1,5 +1,4 @@
-import { CircleUserRound } from "lucide-react";
-
+import { ModeToggle } from "@/components/mode-toggle";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -8,14 +7,15 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { CircleUserRound } from "lucide-react";
+
 import UnauthenticatedUserMenuContent from "./unathenticated-user-menu-content";
-import { ModeToggle } from "@/components/mode-toggle";
 
 const UserMenu = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon">
+        <Button size="icon" variant="ghost">
           <CircleUserRound className="size-6 text-primary" />
         </Button>
       </DropdownMenuTrigger>

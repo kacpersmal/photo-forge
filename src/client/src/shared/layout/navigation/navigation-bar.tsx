@@ -1,14 +1,15 @@
-import { Camera, Contact, Home, Menu } from "lucide-react";
-import NavigationButton, { NavigationButtonProps } from "./navigation-button";
-import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import UserMenu from "./user-menu/user-menu";
 import { motion, useViewportScroll } from "framer-motion";
+import { Camera, Contact, Home, Menu } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+
+import NavigationButton, { NavigationButtonProps } from "./navigation-button";
+import UserMenu from "./user-menu/user-menu";
 
 const NavigationItems: NavigationButtonProps[] = [
-  { icon: <Home className="mr-1 inline-block size-5" />, text: "Poznajmy się", href: "/" },
-  { icon: <Camera className="mr-1 inline-block size-5" />, text: "Galeria", href: "/galeria" },
-  { icon: <Contact className="mr-1 inline-block size-5" />, text: "Kontakt", href: "/kontakt" },
+  { href: "/", icon: <Home className="mr-1 inline-block size-5" />, text: "Poznajmy się" },
+  { href: "/galeria", icon: <Camera className="mr-1 inline-block size-5" />, text: "Galeria" },
+  { href: "/kontakt", icon: <Contact className="mr-1 inline-block size-5" />, text: "Kontakt" },
 ];
 
 const MobileNavigation = () => {
@@ -39,9 +40,9 @@ const Navigation = () => {
 
   return (
     <motion.nav
+      animate={{ y: isScrollingUp ? 0 : "-100%" }}
       className="sticky top-0 z-50 bg-background opacity-90 shadow dark:opacity-75"
       initial={{ y: 0 }}
-      animate={{ y: isScrollingUp ? 0 : "-100%" }}
       transition={{ duration: 0.3 }}
     >
       <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">

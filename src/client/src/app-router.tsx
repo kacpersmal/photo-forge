@@ -1,29 +1,30 @@
 import { createBrowserRouter } from "react-router-dom";
-import HomePage from "./pages/home/home-page";
-import ErrorPage from "./pages/error-page";
-import AppLayout from "./shared/layout/app-layout";
+
 import ContactPage from "./pages/contact/contact-page";
+import ErrorPage from "./pages/error-page";
 import GalleryPage from "./pages/galleries/gallery-page";
+import HomePage from "./pages/home/home-page";
+import AppLayout from "./shared/layout/app-layout";
 
 const AppRouter = createBrowserRouter([
   {
-    path: "/",
-    element: <AppLayout />,
-    errorElement: <ErrorPage />,
     children: [
       {
-        path: "/",
         element: <HomePage />,
+        path: "/",
       },
       {
-        path: "/galeria",
         element: <GalleryPage />,
+        path: "/galeria",
       },
       {
-        path: "/kontakt",
         element: <ContactPage />,
+        path: "/kontakt",
       },
     ],
+    element: <AppLayout />,
+    errorElement: <ErrorPage />,
+    path: "/",
   },
 ]);
 

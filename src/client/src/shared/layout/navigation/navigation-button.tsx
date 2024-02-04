@@ -3,17 +3,17 @@ import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 
 type NavigationButtonProps = {
+  href: string;
   icon: React.ReactNode;
   text: string;
-  href: string;
 };
 
-const NavigationButton = ({ icon, text, href }: NavigationButtonProps) => {
+const NavigationButton = ({ href, icon, text }: NavigationButtonProps) => {
   return (
     <motion.div whileTap={{ scale: 0.8 }}>
-      <NavLink to={href} className="flex flex-row items-center justify-between">
+      <NavLink className="flex flex-row items-center justify-between" to={href}>
         {({ isActive }) => (
-          <Button variant="ghost" className={isActive ? "text-primary" : ""}>
+          <Button className={isActive ? "text-primary" : ""} variant="ghost">
             {icon}
             {text}
           </Button>
