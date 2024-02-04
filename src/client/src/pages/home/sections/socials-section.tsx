@@ -1,42 +1,56 @@
-import SocialCard, { SocialCardProps } from "./social-card";
-import { Facebook, Instagram } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import FacebookIcon from "@/shared/icons/facebook-icon";
+import InstagramIcon from "@/shared/icons/instagram-icon";
+import TikTokIcon from "@/shared/icons/tiktok-icon";
+import Section from "@/shared/layout/section";
 import FadeInWhenVisible from "@/shared/utils/animations/fade-in-when-visible";
-const socials: SocialCardProps[] = [
-  {
-    name: "Facebook",
-    url: "https://facebook.com",
-    icon: <Facebook className="w-full h-full text-blue-600" />,
-  },
-  {
-    name: "Instagram",
-    url: "https://instagram.com",
-    icon: <Instagram className="w-full h-full text-pink-700" />,
-  },
-];
+import { Contact, Mail, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 
 type SocialsSectionProps = { id: string };
 const SocialsSection = ({ id }: SocialsSectionProps) => {
   return (
-    <div
-      id={id}
-      data-name={id}
-      className="flex flex-col sm:flex-row items-center justify-center h-screen snap-start"
-    >
-      <div className="flex flex-col w-1/2 h-1/2">
+    <Section id={id} data-name={id} className="grid h-screen place-items-center">
+      <div className="text-center">
         <FadeInWhenVisible>
-          <h1 className="text-3xl md:text-5xl p-6 md:p-0 font-bold text-center mb-10">
-            Moje sociale
-          </h1>
+          <h1 className="text-4xl font-bold mb-4 text-primary">Skontakuj się ze mną</h1>
         </FadeInWhenVisible>
         <FadeInWhenVisible delay={1}>
-          <div className="flex flex-col md:flex-row gap-4 w-full h-full">
-            {socials.map((social, index) => (
-              <SocialCard key={index} {...social} />
-            ))}
+          <div className="text-lg mb-8">
+            <p>Znajdź mnie na swoich social mediach albo skontaktuj się ze mną prywatnie!</p>
+            lub skorzystaj z
+            <Link to="/kontakt">
+              <Button className="ml-2 text-background" size="sm">
+                Mojego formularzu kontaktowego
+              </Button>
+            </Link>
           </div>
         </FadeInWhenVisible>
+
+        <FadeInWhenVisible delay={1.5} className="grid grid-rows-3 grid-cols-2 gap-2">
+          <a className="flex flex-row items-center gap-2">
+            <InstagramIcon className="w-12 h-12 bg-primary p-2 text-background" />
+            @Instagram
+          </a>
+          <a className="flex flex-row items-center gap-2">
+            <FacebookIcon className="w-12 h-12 bg-primary p-2 text-background" />
+            @Facebook
+          </a>
+          <a className="flex flex-row items-center gap-2">
+            <TikTokIcon className="w-12 h-12 bg-primary p-2 text-background" />
+            @TikTok
+          </a>
+          <a className="flex flex-row items-center gap-2">
+            <Mail className="w-12 h-12 bg-primary p-2 text-background" />
+            @email
+          </a>
+          <a className="flex flex-row items-center gap-2">
+            <Phone className="w-12 h-12 bg-primary p-2 text-background" />
+            @phone
+          </a>
+        </FadeInWhenVisible>
       </div>
-    </div>
+    </Section>
   );
 };
 

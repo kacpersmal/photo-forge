@@ -1,37 +1,33 @@
+import Section from "@/shared/layout/section";
 import FadeInWhenVisible from "@/shared/utils/animations/fade-in-when-visible";
 
 type AboutSectionProps = { id: string };
 const AboutSection = ({ id }: AboutSectionProps) => {
   return (
-    <div
-      id={id}
-      data-name={id}
-      className="h-screen bg-cover bg-center snap-start"
-      style={{ backgroundImage: "url('https://source.unsplash.com/random/1')" }}
-    >
-      <div className="h-full bg-black bg-opacity-50 flex items-center justify-center">
-        <div className="text-left text-white flex flex-col md:flex-row items-center justify-evenly">
-          <FadeInWhenVisible>
-            <div className="p-2">
-              <h1 className="text-2xl md:text-5xl font-bold mb-4"> Witaj na moim portfolio</h1>
-              <p className="text-sm md:text-2xl">
-                Witaj w moim portfolio, gdzie światło staje się historią, a cienie malują emocje.
-                Każde zdjęcie to krok w niezwykłą podróż przez moje obiektywy.
-              </p>
-            </div>
+    <Section id={id} bgImage="https://source.unsplash.com/random/1">
+      <div className="grid h-screen place-items-center">
+        <div className="md:grid grid-rows-1 grid-cols-2 place-items-center w-full h-full">
+          <FadeInWhenVisible className="p-2">
+            <h1 className="text-3xl md:text-5xl  md:p-0 font-bold text-left md:mb-4 md:mr-4 text-primary">
+              Poznajmy się
+            </h1>
+            <p className="text-white max-w-xl text-lg">
+              Jestem Gabriela, pełna energii i entuzjazmu młoda artystka z pasją do fotografii i
+              muzyki. Moje dni wypełnione są dźwiękami, a moim aparatem staram się zatrzymać każdy
+              unikalny moment, przechwycić emocje i opowiedzieć historię, która nieśmiało szepcze
+              zza obiektywu.
+            </p>
           </FadeInWhenVisible>
-          <FadeInWhenVisible delay={1}>
-            <div className="md:mr-0 md:ml-auto mb-0 mt-auto">
-              <img
-                src="https://source.unsplash.com/random/2"
-                alt="About me"
-                className="max-h-svh aspect-auto object-cover mb-0 mt-auto p-0"
-              />
-            </div>
+          <FadeInWhenVisible delay={1} className="w-full h-full">
+            <img
+              src="https://source.unsplash.com/random/1"
+              alt="Preview 1"
+              className="object-cover w-full max-h-lvh p-2 md:p-0"
+            />
           </FadeInWhenVisible>
         </div>
       </div>
-    </div>
+    </Section>
   );
 };
 

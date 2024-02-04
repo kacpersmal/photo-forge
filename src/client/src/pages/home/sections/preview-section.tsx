@@ -1,24 +1,30 @@
+import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import Section from "@/shared/layout/section";
 import FadeInWhenVisible from "@/shared/utils/animations/fade-in-when-visible";
 import Autoplay from "embla-carousel-autoplay";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 type PreviewSectionProps = {
   id: string;
 };
 const PreviewSection = ({ id }: PreviewSectionProps) => {
   return (
-    <div
-      id={id}
-      data-name={id}
-      className="flex flex-col sm:flex-row items-center justify-center h-screen snap-start"
-    >
-      <div className="flex flex-col md:flex-row md:items-center">
-        <FadeInWhenVisible>
-          <h1 className="text-3xl md:text-5xl p-6 md:p-0 font-bold text-left md:mb-4 md:mr-4">
+    <Section id={id} className="grid h-screen place-items-center">
+      <div className="md:grid grid-rows-1 grid-cols-2 place-items-center">
+        <FadeInWhenVisible className="p-2">
+          <h1 className="text-3xl md:text-5xl  md:p-0 font-bold text-left md:mb-4 md:mr-4 text-primary">
             O to parę moich ujęć
           </h1>
+          <p className="max-w-xl text-lg font-semibold">Spójrz na to z mojej perspektywy</p>
+          <Link to="/galeria">
+            <Button className="mt-4 text-background">
+              Zobacz więcej <ArrowRight />
+            </Button>
+          </Link>
         </FadeInWhenVisible>
-        <FadeInWhenVisible delay={1}>
+        <FadeInWhenVisible delay={1} className="">
           <Carousel
             opts={{
               align: "start",
@@ -31,17 +37,16 @@ const PreviewSection = ({ id }: PreviewSectionProps) => {
                 stopOnInteraction: false,
               }),
             ]}
-            className="flex items-center justify-center h-full w-screen max-w-screen-md"
           >
             <CarouselContent className="">
               {Array.from({ length: 10 }).map((_, index) => (
                 <CarouselItem key={index} className="basis-1/3">
-                  <div className="p-1 aspect-square">
+                  <div className=" aspect-square">
                     {Array.from({ length: 3 }).map((_, gridIndex) => (
                       <img
                         src={`https://source.unsplash.com/random?sig=${gridIndex * 100 + index}`}
                         alt={`Preview ${index}`}
-                        className="object-cover w-full h-full"
+                        className="object-cover w-full h-full py-2"
                       />
                     ))}
                   </div>
@@ -51,7 +56,7 @@ const PreviewSection = ({ id }: PreviewSectionProps) => {
           </Carousel>
         </FadeInWhenVisible>
       </div>
-    </div>
+    </Section>
   );
 };
 

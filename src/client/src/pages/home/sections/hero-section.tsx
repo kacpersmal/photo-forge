@@ -1,29 +1,21 @@
-import FadeInWhenVisible from "@/shared/utils/animations/fade-in-when-visible";
+import Section from "@/shared/layout/section";
 type HeroSectionProps = {
   id: string;
 };
 const HeroSection = ({ id }: HeroSectionProps) => {
   return (
-    <div
-      id={id}
-      data-name={id}
-      className="h-screen bg-cover bg-center snap-start"
-      style={{ backgroundImage: "url('https://source.unsplash.com/random')" }}
-    >
-      <div className="h-full bg-black bg-opacity-50 flex items-center justify-center">
-        <div className="text-center text-white">
-          <FadeInWhenVisible>
-            <h1 className="text-5xl font-bold mb-4">Witaj na moim portfolio</h1>
-          </FadeInWhenVisible>
-          <FadeInWhenVisible delay={1}>
-            <p className="text-xl">
-              Witaj w moim portfolio, gdzie światło staje się historią, a cienie malują emocje.
-              Każde zdjęcie to krok w niezwykłą podróż przez moje obiektywy.
-            </p>
-          </FadeInWhenVisible>
+    <Section id={id} bgImage="https://source.unsplash.com/random">
+      <div className="grid h-screen place-items-center">
+        <div className="p-2 md:p-0">
+          <h1 className="text-primary text-5xl font-bold mb-4">"Uchwyć Chwilę, Zatrzymaj Czas"</h1>
+          <p className="max-w-xl text-lg font-semibold text-white">
+            Zapraszam Cię do magicznego świata kreatywności, światła i emocji. Jesteś gotów na
+            podróż przez unikalne chwile, uwiecznione obiektywem? Witaj na moim portfolio
+            fotograficznym, gdzie każde zdjęcie opowiada niepowtarzalną historię.
+          </p>
         </div>
       </div>
-    </div>
+    </Section>
   );
 };
 

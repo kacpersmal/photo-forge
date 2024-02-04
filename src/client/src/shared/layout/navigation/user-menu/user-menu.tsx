@@ -16,7 +16,7 @@ const UserMenu = () => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="icon">
-          <CircleUserRound className="h-6 w-6" />
+          <CircleUserRound className="h-6 w-6 text-primary" />
         </Button>
       </DropdownMenuTrigger>
 

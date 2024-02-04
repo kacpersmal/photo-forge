@@ -1,13 +1,15 @@
 import { motion } from "framer-motion";
 
 type FadeInWhenVisibleProps = {
-  children: React.ReactNode;
+  children: React.ReactNode | React.ReactNode[];
   duration?: number;
   delay?: number;
   once?: boolean;
+  className?: string;
 };
 const FadeInWhenVisible = ({
   children,
+  className,
   duration = 1,
   delay = 0.5,
   once = true,
@@ -22,7 +24,7 @@ const FadeInWhenVisible = ({
         visible: { opacity: 1 },
         hidden: { opacity: 0 },
       }}
-      className="w-full h-full"
+      className={className ? className : ""}
     >
       {children}
     </motion.div>

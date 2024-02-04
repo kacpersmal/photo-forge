@@ -1,4 +1,4 @@
-import { Camera, Home, Mail, Menu } from "lucide-react";
+import { Camera, Contact, Home, Mail, Menu } from "lucide-react";
 import NavigationButton, { NavigationButtonProps } from "./navigation-button";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -8,7 +8,7 @@ import { motion, useViewportScroll } from "framer-motion";
 const NavigationItems: NavigationButtonProps[] = [
   { icon: <Home className="h-5 w-5 mr-1 inline-block" />, text: "Poznajmy się", href: "/" },
   { icon: <Camera className="h-5 w-5 mr-1 inline-block" />, text: "Galeria", href: "/galeria" },
-  { icon: <Mail className="h-5 w-5 mr-1 inline-block" />, text: "Kontakt", href: "/kontakt" },
+  { icon: <Contact className="h-5 w-5 mr-1 inline-block" />, text: "Kontakt", href: "/kontakt" },
 ];
 
 const MobileNavigation = () => {
@@ -48,7 +48,9 @@ const Navigation = () => {
         <div className="relative flex items-center justify-between h-16">
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex-shrink-0 flex items-center text-center">
-              <h1 className="font-bold tracking-tight text-2xl lg:text-3xl">Photo</h1>
+              <h1 className="font-bold tracking-tight text-2xl lg:text-3xl text-primary">
+                Gabriela Mirek
+              </h1>
             </div>
             <div className="hidden sm:block sm:ml-6 ">
               <div className="flex space-x-4 x">

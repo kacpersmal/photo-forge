@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 44 48% 95%;
     --foreground: 0 0% 5%;
 
     --card: 0 0% 100%;
@@ -73,6 +73,10 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+body {
+  scroll-margin-top: 30px;
 }
 
 ::-webkit-scrollbar {
