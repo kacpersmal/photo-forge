@@ -5,7 +5,7 @@ const AppLayout = () => {
   return (
     <>
       <Navigation />
-      <main>
+      <main className="w-full ">
         <Outlet />
       </main>
     </>
