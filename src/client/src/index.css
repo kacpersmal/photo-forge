@@ -89,3 +89,9 @@
   background: hsl(var(--foreground));
   border-radius: 100px;
 }
+
+#root {
+  scroll-snap-type: y proximity;
+  overflow-y: scroll;
+  height: 100vh;
+}

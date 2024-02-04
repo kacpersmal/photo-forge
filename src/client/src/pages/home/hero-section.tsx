@@ -8,20 +8,22 @@ const HeroSection = ({ id }: HeroSectionProps) => {
     <div
       id={id}
       data-name={id}
-      className="h-screen bg-cover bg-center"
+      className="h-screen bg-cover bg-center snap-start"
       style={{ backgroundImage: "url('https://source.unsplash.com/random')" }}
     >
       <div className="h-full bg-black bg-opacity-50 flex items-center justify-center">
         <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: false, margin: "-200px" }}
+          transition={{ delay: 1, duration: 1 }}
           className="text-center text-white"
         >
           <motion.h1
             className="text-5xl font-bold mb-4"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: false, margin: "-200px" }}
             transition={{ delay: 1, duration: 1 }}
           >
             Witaj na moim portfolio
@@ -29,7 +31,8 @@ const HeroSection = ({ id }: HeroSectionProps) => {
           <motion.p
             className="text-xl"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: false, margin: "-200px" }}
             transition={{ delay: 2, duration: 1 }}
           >
             Witaj w moim portfolio, gdzie światło staje się historią, a cienie malują emocje. Każde
