@@ -28,13 +28,17 @@ const SocialsSection = ({ id }: SocialsSectionProps) => {
             Moje sociale
           </h1>
         </FadeInWhenVisible>
+                              <FadeInWhenVisible delay={1}>
+
         <div className="flex flex-col md:flex-row gap-4 w-full h-full">
+
           {socials.map((social, index) => (
-            <FadeInWhenVisible delay={1 + index}>
               <SocialCard key={index} {...social} />
-            </FadeInWhenVisible>
           ))}
+
         </div>
+                              </FadeInWhenVisible>
+
       </div>
     </div>
   );

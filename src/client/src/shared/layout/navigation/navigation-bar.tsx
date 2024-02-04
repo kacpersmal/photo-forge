@@ -14,7 +14,7 @@ const NavigationItems: NavigationButtonProps[] = [
 const MobileNavigation = () => {
   return (
     <div className="sm:hidden">
-      <div className="px-2 pt-2 pb-3 space-y-1 text-center">
+      <div className="px-2 pt-2 pb-3 space-y-1 flex flex-row justify-between">
         {NavigationItems.map((item, index) => (
           <NavigationButton key={index} {...item} />
         ))}
