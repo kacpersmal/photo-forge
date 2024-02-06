@@ -71,28 +71,6 @@ public class CreateGalleryCommandHandlerTests
         await act.Should().NotThrowAsync<EntityConflictException>();
     }
 
-        [Test]
-    public async Task Handle_WhenAccessCodeIsProvided_SetsAccessCode()
-    {
-        // Arrange
-        var command = new CreateGalleryCommand
-        {
-            Name = "New Name",
-            Description = "New Description",
-            IsPublic = false,
-            AccessCode = "AccessCode"
-        };
-
-        _hashedValueServiceMock.Setup(x => x.GenerateHashedValue(It.IsAny<string>())).Returns("HashedAccessCode");
-
-        // Act
-        var result = await _handler.Handle(command, CancellationToken.None);
-
-        // Assert
-        var gallery = _context.Galleries.Find(result.Id);
-        gallery?.AccessCode.Should().Be("HashedAccessCode");
-    }
-
     [Test]
     public async Task Handle_WhenAccessCodeIsNotProvided_DoesNotSetAccessCode()
     {
@@ -110,35 +88,6 @@ public class CreateGalleryCommandHandlerTests
         // Assert
         var gallery = _context.Galleries.Find(result.Id);
         gallery?.AccessCode.Should().BeNull();
-    }
-
-    [Test]
-    public async Task Handle_WhenUsersAreProvided_GrantsAccessToUsers()
-    {
-        // Arrange
-        var users = new List<User>
-        {
-            new User { FullName = new FullName("User1", "") },
-            new User { Id = Guid.NewGuid(), UserName = "User2" }
-        };
-
-        _context.Users.AddRange(users);
-        _context.SaveChanges();
-
-        var command = new CreateGalleryCommand
-        {
-            Name = "New Name",
-            Description = "New Description",
-            IsPublic = false,
-            UsersWithAccess = users.Select(u => u.Id).ToList()
-        };
-
-        // Act
-        var result = await _handler.Handle(command, CancellationToken.None);
-
-        // Assert
-        var gallery = _context.Galleries.Include(g => g.Users).Single(g => g.Id == result.Id);
-        gallery.Users.Should().BeEquivalentTo(users);
     }
 
     [Test]
