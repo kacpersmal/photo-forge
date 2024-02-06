@@ -1,15 +1,15 @@
 client:
 - changed-files:
-  - any-glob-to-any-file: './src/client/**/*'
+  - any-glob-to-any-file: 'src/client/**/*'
 
 server:
 - changed-files:
-  - any-glob-to-any-file: './src/server/**/*'
+  - any-glob-to-any-file: 'src/server/**/*'
 
 terraform:
 - changed-files:
-  - any-glob-to-any-file: './terraform/**/*'
+  - any-glob-to-any-file: 'terraform/**/*'
 
 migration-required:
 - changed-files:
-  - any-glob-to-any-file: './src/server/PhotoForge.Infrastructure/Migrations/**/*'
+  - any-glob-to-any-file: 'src/server/PhotoForge.Infrastructure/Migrations/**/*'
