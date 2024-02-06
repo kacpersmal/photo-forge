@@ -11,6 +11,6 @@ jobs:
     steps:
     - uses: actions/labeler@v5
       with:
-        configuration-path: .github/labeler_config.yml
+        configuration-path: ./.github/labeler_config.yml
       env:
         GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
