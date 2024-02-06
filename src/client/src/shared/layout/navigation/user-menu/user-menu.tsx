@@ -20,7 +20,7 @@ const UserMenu = () => {
         </Button>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent className="w-56">
+      <DropdownMenuContent className="w-56 bg-background">
         <UnauthenticatedUserMenuContent />
         <DropdownMenuSeparator />
         <DropdownMenuGroup>

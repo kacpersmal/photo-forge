@@ -12,11 +12,7 @@ const Section = ({ bgImage, children, className, id }: SectionProps) => {
       id={id}
       style={{ backgroundImage: bgImage ? `url(${bgImage})` : "none" }}
     >
-      {bgImage == undefined ? (
-        children
-      ) : (
-        <div className="min-h-lvh bg-black/50">{children}</div>
-      )}
+      {bgImage == undefined ? children : <div className="min-h-lvh bg-black/50">{children}</div>}
     </div>
   );
 };

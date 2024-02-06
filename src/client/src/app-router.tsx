@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 
+import SignInPage from "./pages/auth/sign-in-page";
 import ContactPage from "./pages/contact/contact-page";
 import ErrorPage from "./pages/error-page";
 import GalleryPage from "./pages/galleries/gallery-page";
@@ -20,6 +21,10 @@ const AppRouter = createBrowserRouter([
       {
         element: <ContactPage />,
         path: "/kontakt",
+      },
+      {
+        element: <SignInPage />,
+        path: "/zaloguj-się",
       },
     ],
     element: <AppLayout />,
