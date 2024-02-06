@@ -1,13 +1,16 @@
-name: "Pull Request Labeler"
+name: "Label PR"
 on:
-  pull_request_target:
-    types: [opened, synchronize]
+- pull_request_target
 
 jobs:
-  label:
+  labeler:
+    permissions:
+      contents: read
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/labeler@v3
+    - uses: actions/labeler@v5
       with:
-        repo-token: "${{ secrets.GITHUB_TOKEN }}"
         configuration-path: .github/labeler.yml
+      env:
+        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
