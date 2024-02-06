@@ -13,3 +13,12 @@ terraform:
 migration-required:
 - changed-files:
   - any-glob-to-any-file: 'src/server/PhotoForge.Infrastructure/Migrations/**/*'
+
+general:
+  - changed-files:
+    - any-glob-to-any-file: '**/*'
+    - all-globs-to-all-files: '!src/**/*'
+    - all-globs-to-all-files: '!terraform/**/*'
+
+feature:
+ - head-branch: ['^feature', 'feature']
