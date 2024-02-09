@@ -40,7 +40,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseCors();
+app.UseCors(cfg =>
+{
+    //Temporary fix
+    cfg.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+});
 app.UseAntiforgery();
 
 app.UseResponseCaching();

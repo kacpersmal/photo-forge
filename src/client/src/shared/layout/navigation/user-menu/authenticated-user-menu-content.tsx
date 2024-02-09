@@ -4,9 +4,19 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
+import useAuthStore from "@/state/auth-store";
 import { Bell, Camera, LogOut, User } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const AuthenticatedUserMenuContent = () => {
+  const logout = useAuthStore(state => state.logout);
+  const navigate = useNavigate();
+
+  const onLogout = () => {
+    logout();
+    navigate("/");
+  };
+
   return (
     <>
       <DropdownMenuGroup>
@@ -26,7 +36,7 @@ const AuthenticatedUserMenuContent = () => {
             <span>Powiadomienia</span>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem className="text-red-600">
+          <DropdownMenuItem className="text-red-600" onClick={onLogout}>
             <LogOut className="mr-2 size-4" />
             <span>Wyloguj się</span>
           </DropdownMenuItem>

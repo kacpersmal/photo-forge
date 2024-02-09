@@ -9,7 +9,8 @@ public static class CorsExtensions
             options.AddPolicy("CorsPolicy",
                 builder => builder.AllowAnyOrigin()
                     .AllowAnyMethod()
-                    .AllowAnyHeader());
+                    .AllowAnyHeader()
+                    );
         });
     } 
 }

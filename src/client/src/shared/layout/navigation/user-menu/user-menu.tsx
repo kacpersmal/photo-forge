@@ -7,11 +7,16 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import useAuthStore from "@/state/auth-store";
 import { CircleUserRound } from "lucide-react";
 
+import AdminUserMenu from "./admin-user-menu";
+import AuthenticatedUserMenuContent from "./authenticated-user-menu-content";
 import UnauthenticatedUserMenuContent from "./unathenticated-user-menu-content";
 
 const UserMenu = () => {
+  const user = useAuthStore(state => state.user);
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -21,7 +26,8 @@ const UserMenu = () => {
       </DropdownMenuTrigger>
 
       <DropdownMenuContent className="w-56 bg-background">
-        <UnauthenticatedUserMenuContent />
+        {user?.role === "Admin" && <AdminUserMenu />}
+        {user ? <AuthenticatedUserMenuContent /> : <UnauthenticatedUserMenuContent />}
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <ModeToggle />
