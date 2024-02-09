@@ -12,12 +12,14 @@ import { useNavigate } from "react-router-dom";
 
 const SignInForm = () => {
   const setUser = useAuthStore(state => state.setUser);
+  const setAuthSession = useAuthStore(state => state.setAuthSession);
   const navigate = useNavigate();
   const mutation = useMutation({
     mutationFn: SignInFn,
     onSuccess: data => {
       const decoded = DecodeToken(data.token.value);
       setUser(decoded);
+      setAuthSession(data);
       if (decoded.role === "Admin") navigate("/dashboard");
       navigate("/");
     },
